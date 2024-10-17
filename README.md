@@ -28,7 +28,8 @@ Predicted Clocks (Note: the clock dividers' states were modified to represent sm
 ![clockdivider_rtl testing modification](https://github.com/user-attachments/assets/b7f0fb09-0b4d-47e5-b934-5de81c8620c1)
 
 Console: 
-`ECE2300: ~/led/hw+tests % ./Test_ClockDivider_RTL
+```
+ECE2300: ~/led/hw+tests % ./Test_ClockDivider_RTL
 VCD info: dumpfile Test_ClockDivider_RTL.vcd opened for output.
 VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
 time=  1, 1000 => 1
@@ -169,7 +170,8 @@ time=3685, 0000 => 1
 time=3686, 0000 => 0
 time=3693, 0000 => 1
 time=3694, 0000 => 0
-Test_ClockDivider_RTL.v:20: $finish called at 3694000 (1ps)`
+Test_ClockDivider_RTL.v:20: $finish called at 3694000 (1ps)
+```
 
 fsm_1_RTL was tested using the same modified ClockDivider_RTL states. The checks inserted button and switch inputs into fsm1_RTL and monitored whether the LED output in the next rising edge matched expected values; however, for the case of turning off Switch 0, the checks checked the LED outputs immediately after to see if the LEDs turned off with Switch 0 instead of at the next rising edge. The checks simulated the process of a user turning the lights on, pressing buttons to modify the speed, pausing the sequence progression, and turning off the lights. Running the tests showed the following: 
 ```
@@ -309,7 +311,7 @@ time=                 557, 0000, 10 => 0000
 
 Success
 ```
-##Hardware Implementation
+## Hardware Implementation
 Not implemented yet.
-##Comments
+## Comments
 Among all the modules, I found coding the clock divider and the test benches to be difficult, as I had not encountered these types of problems in my ECE 2300 class. Debugging unexpected Verilator errors and discrepancies between predicted and actual clock cycles was also challenging, as I had yet to develop a comprehensive knowledge of SystemVerilog syntax, and the clock divider consisted of many interacting components. Furthermore, as I had to complete my project within a week, I think that my haste led me to implement inefficient designs and testing methods. Further research on clock timing manipulation and greater reliance on organized brainstorming methods such as state-machine diagrams would likely determine the success of my next project.
