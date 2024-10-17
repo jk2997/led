@@ -12,3 +12,5 @@ The Pynq-Z2 board has two switches, four buttons, and four LEDs. The light seque
 For user controls:
 - Switches: Switch 1 would control sequence progression: logic 1 would mean that the sequence automatically progresses from STATE_S0 to STATE_S7 and repeats, while a 0 would pause the sequence at a certain step. Switch 0 would control on/off.
 - Buttons: Speed controls. There would be 9 speeds available: 4 sec/step, 2 sec/step, 1 sec/step, 0.5 sec/step, 0.25 sec/step, 0.125 sec/step, 0.0625 sec/step, 0.03125 sec/step, and 0.015625 sec/step. Button 3 (the leftmost button) would move the speed left by 2 (e.g., 1 to 4, 0.5 to 2), button 2 left by 1 (e.g., 1 to 2), button 1 right by 1 (e.g., 1 to 0.5), and button 0 right by 2 (e.g., 1 to 0.25). The button controls would also loop back (e.g., pressing button 3 at 4 sec/step would make the speed 0.3125 sec/step).
+
+I implemented the circuit in four modules: Register_4b_RTL.v (4-bit register with enable), Register_30b_RTL.v (30-bit register), ClockDivider_RTL.v, and fsm1_RTL.v. The 
